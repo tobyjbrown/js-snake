@@ -1,14 +1,3 @@
-// steps:
-// make a red square that I can control and that moves
-// around the canvas in a grid
-
-
-// to do:
-
-// add a score counter to the top right
-// display score in alert message
-// style the page with SVG background
-
 // make a grid -> an array of game tiles
 
 let difficultyBtns = document.querySelector('.diff-btns').children;
@@ -57,14 +46,11 @@ let score = 1;
 
 
 // ============================================
-
 // event listeners
 
 window.addEventListener('keydown', function(e) {
     setTimeout(keyPressHandler(e), difficultySpeed);
 });
-
-// what if i used a set timeout function to delay the user's input 26 ms so that two moves cannot be made on the same frame?
 
 function keyPressHandler(e) {
     if(e.key == 'down' || e.key == "ArrowDown") {
@@ -113,14 +99,6 @@ function drawSnake() {
     snakeX += dx;
     snakeY += dy;
 
-    // // all other parts inherit next position from chain
-    // for(let part = 1; part < snake.length; part++) {
-    //     snake[part] = snake[part - 1];
-    //     // console.log(snake[part]);
-    // }
-
-    // snake[0] = [snakeX, snakeY];
-
     snake.unshift([snakeX, snakeY]);
     snake.pop();
 
@@ -130,7 +108,6 @@ function drawSnake() {
 
     // switch on the snake on the board
     snake.forEach( bodyPart => boardArr[bodyPart[0]][bodyPart[1]].snake = true);
-    // console.log(snake);
 
     // turn off the last part of the snake on the board
     if (snake.length > 1) {
@@ -150,13 +127,7 @@ function drawSnake() {
         }
     }
 }
-
-
-// create an array of tiles that make up board, each tile object
-// as x, y, snake, coin
-
-// nested for that populates an array
-
+// nested for loop that populates an array
 function createBoard() {
     for(let c = 0; c < boardColumns; c++) {
         boardArr[c] = []
@@ -168,9 +139,6 @@ function createBoard() {
     }
     newCoin();
 }
-
-// now that the board is created, I should be able to create my snake
-// at any co-ordinate with a draw snake function
 
 function drawCoins() {
     
@@ -208,15 +176,10 @@ function detectCollision() {
     }
 
     if(checkForDuplicates(snake)) {
-        // alert(`Game over! You scored ${score - 1} points.`);
         clearInterval(play);
         setTimeout(gameOver, 1000);
-        
-        // document.location.reload();
     };
 }
-
-// could i add a while loop so coin is not placed on snake path?
 
 function newCoin() {
 
