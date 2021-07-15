@@ -1,3 +1,7 @@
 # [JS Snake](https://tobyjbrown.github.io/js-snake/)
 
-## [Click here](https://tobyjbrown.github.io/js-snake/) to play the game via GitHub pages.
+## Use the arrow keys to control the snake and beat your high score! [Click here](https://tobyjbrown.github.io/js-snake/) to play the game via GitHub pages.
+
+![title screen](https://github.com/tobyjbrown/js-snake/blob/master/images/title-screen.png)
+![gameplay](https://github.com/tobyjbrown/js-snake/blob/master/images/gameplay.png)
+![game over](https://github.com/tobyjbrown/js-snake/blob/master/images/game-over.png)
